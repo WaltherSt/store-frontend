@@ -1,0 +1,72 @@
+<div class="bg-gray-100 min-h-screen">
+  <!-- Carrusel de Banners -->
+  <div class="w-full overflow-hidden">
+    <div class="flex transition-transform duration-500">
+      <div class="w-full h-64 bg-[url('https://via.placeholder.com/1280x400')] bg-cover bg-center">
+        <div class="flex justify-center items-center h-full bg-black bg-opacity-50">
+          <h2 class="text-white text-3xl font-semibold">Promoción Especial</h2>
+        </div>
+      </div>
+      <div class="w-full h-64 bg-[url('https://via.placeholder.com/1280x400/ddd')] bg-cover bg-center">
+        <div class="flex justify-center items-center h-full bg-black bg-opacity-50">
+          <h2 class="text-white text-3xl font-semibold">Descuentos Limitados</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categorías Principales -->
+  <section class="py-10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Explora nuestras categorías</h2>
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer">
+          <div class="w-full h-32 bg-[url('https://audaces.com/wp-content/uploads/2022/03/estilos-de-moda.webp')] bg-cover bg-center rounded"></div>
+          <h3 class=" font-medium text-gray-800 mt-4 text-center">Ropa</h3>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer">
+          <div class="w-full h-32 bg-[url('https://cdn.euroinnova.edu.es/img/subidasEditor/tl-1616375880.webp')] bg-cover bg-center rounded"></div>
+          <h3 class="font-medium text-gray-800 mt-4 text-center">Tecnología</h3>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer">
+          <div class="w-full h-32 bg-[url('https://insumosfirstpro.com/wp-content/uploads/2023/07/limpiar-la-casa-en-un-dia-668x400x80xX.jpg')] bg-cover bg-center rounded"></div>
+          <h3 class=" font-medium text-gray-800 mt-4 text-center">Hogar</h3>
+        </div>
+        <div class="bg-white p-4 rounded-lg shadow hover:shadow-lg cursor-pointer">
+          <div class="w-full h-32 bg-[url('https://img.freepik.com/fotos-premium/deportes-equipo-futbol-retrato-amigos-pie-junto-pelota-cancha-ciudad-al-aire-libre-mujer-diversidad-deporte-fitness-salud-novias-empoderamiento-o-apoyo-antes-partido-competencia_590464-95881.jpg')] bg-cover bg-center rounded"></div>
+          <h3 class="font-medium text-gray-800 mt-4 text-center">Deportes</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Productos Destacados -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="text-2xl font-semibold text-gray-800 mb-6">Productos Destacados</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+
+        @for (product of products; track product.id) {
+          <div class="bg-white rounded-lg shadow hover:shadow-lg">
+            <div
+              class="w-full h-48 bg-cover bg-center rounded-t-lg"
+              [ngStyle]="{'background-image': 'url(' + product.images[0].url + ')'}">
+            </div>
+            <div class="p-4">
+              <h3 class="text-sm font-medium text-gray-800">{{product.name}}</h3>
+              <p class="text-sm text-gray-600 mt-2">$ {{product.price| number:'1.0-0' }}</p>
+              <button
+                class="mt-4 w-full py-2 bg-black text-white text-sm font-semibold rounded hover:bg-gray-800 transition"
+              >
+                Añadir al Carrito
+              </button>
+            </div>
+          </div>
+        }
+
+
+      </div>
+    </div>
+  </section>
+</div>

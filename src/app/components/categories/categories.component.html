@@ -1,0 +1,123 @@
+<div class="min-h-screen bg-gray-100">
+  <!-- Contenedor Principal -->
+  <div class="container mx-auto px-4 py-8">
+    <div class="flex flex-col md:flex-row gap-6">
+      <!-- Barra Lateral de Filtros -->
+      <aside class="w-full md:w-1/4 bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-lg font-bold text-gray-800 mb-6">Filtrar por</h2>
+
+        <!-- Filtro de Precio -->
+        <div class="mb-8">
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">Rango de Precio</h3>
+          <div class="flex items-center gap-2">
+            <input
+              type="number"
+              placeholder="Mín"
+              class="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
+            />
+            <span>-</span>
+            <input
+              type="number"
+              placeholder="Máx"
+              class="w-1/2 px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
+            />
+          </div>
+        </div>
+
+        <!-- Filtro de Marca -->
+        <div class="mb-8">
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">Marca</h3>
+          <ul class="space-y-3">
+            <li>
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="text-black focus:ring-black" />
+                <span class="text-sm text-gray-600">Marca 1</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="text-black focus:ring-black" />
+                <span class="text-sm text-gray-600">Marca 2</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center gap-2">
+                <input type="checkbox" class="text-black focus:ring-black" />
+                <span class="text-sm text-gray-600">Marca 3</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Filtro de Disponibilidad -->
+        <div>
+          <h3 class="text-sm font-semibold text-gray-700 mb-3">Disponibilidad</h3>
+          <ul class="space-y-3">
+            <li>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="availability" class="text-black focus:ring-black" />
+                <span class="text-sm text-gray-600">En Stock</span>
+              </label>
+            </li>
+            <li>
+              <label class="flex items-center gap-2">
+                <input type="radio" name="availability" class="text-black focus:ring-black" />
+                <span class="text-sm text-gray-600">Agotado</span>
+              </label>
+            </li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Lista de Productos -->
+      <section class="flex-1">
+        <!-- Encabezado -->
+        <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+          <h2 class="text-2xl font-bold text-gray-800">Productos</h2>
+          <div class="flex items-center gap-2">
+            <label for="sort" class="text-sm font-medium text-gray-700">Ordenar por:</label>
+            <select
+              id="sort"
+              class="px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black"
+            >
+              <option>Relevancia</option>
+              <option>Precio: Menor a Mayor</option>
+              <option>Precio: Mayor a Menor</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Grid de Productos -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Tarjeta de Producto -->
+          <div class="bg-white shadow-md rounded-lg overflow-hidden">
+            <img
+              src="https://via.placeholder.com/300"
+              alt="Producto"
+              class="w-full h-48 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-gray-800 mb-2">Nombre del Producto</h3>
+              <p class="text-gray-500 text-sm mb-4">$99.99</p>
+              <button
+                class="w-full py-2 bg-black text-white font-semibold rounded hover:bg-gray-800 transition"
+              >
+                Agregar al Carrito
+              </button>
+            </div>
+          </div>
+
+          <!-- Más productos pueden ir aquí -->
+        </div>
+
+        <!-- Paginación -->
+        <div class="mt-10 flex justify-center items-center gap-2">
+          <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-200">1</button>
+          <button class="px-4 py-2 bg-black text-white rounded hover:bg-gray-800">2</button>
+          <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-200">3</button>
+          <button class="px-4 py-2 border border-gray-300 rounded hover:bg-gray-200">...</button>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
