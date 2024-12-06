@@ -1,77 +1,17 @@
-<div class="fixed inset-0 flex z-50">
-  <!-- Panel Lateral -->
-  <div class="w-80 bg-white shadow-lg rounded-r-lg overflow-auto h-full relative">
-    <!-- Header -->
-    <div class="flex items-center justify-between p-4 border-b">
-      <h2 class="text-2xl font-semibold text-gray-800 py-2 px-4">Menú</h2>
-      <button class="text-gray-600 hover:text-gray-900">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-          <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
-        </svg>
-      </button>
-    </div>
+<div class="relative">
+  <!-- Icono del cliente en la parte superior derecha -->
+  <div class="flex items-center space-x-3 cursor-pointer hover:bg-gray-100 p-2 rounded-full transition-all duration-300">
+    <img src="https://via.placeholder.com/40" alt="Imagen de Usuario" class="rounded-full w-10 h-10">
+    <span class="text-gray-800 text-sm font-semibold">Juan Pérez</span>
+  </div>
 
-    <!-- Menu Items -->
-    <div class="flex flex-col p-4 space-y-4 overflow-auto">
-      <a
-        class="text-lg font-medium text-gray-700 transition-colors py-2 px-4 rounded hover:bg-black hover:text-white w-full text-left"
-        href="#">
-        Inicio
-      </a>
-      <a
-        class="text-lg font-medium text-gray-700 transition-colors py-2 px-4 rounded hover:bg-black hover:text-white w-full text-left"
-        href="#">
-        Tienda
-      </a>
-      <a
-        class="text-lg font-medium text-gray-700 transition-colors py-2 px-4 rounded hover:bg-black hover:text-white w-full text-left"
-        href="#">
-        Ofertas
-      </a>
-      <!-- Categorías con Submenú -->
-      <div class="relative group w-full">
-        <a
-          class="text-lg font-medium text-gray-700 transition-colors py-2 px-4 rounded w-full text-left cursor-pointer "
-          href="#">
-          Categorías
-        </a>
-        <!-- Submenú -->
-        <div
-          class="hidden group-hover:block bg-white mt-2 space-y-1 w-full">
-          <a
-            class="block px-4 py-2 text-gray-700 hover:bg-black hover:text-white rounded"
-            href="#">
-            Electrónica
-          </a>
-          <a
-            class="block px-4 py-2 text-gray-700 hover:bg-black hover:text-white rounded"
-            href="#">
-            Ropa
-          </a>
-          <a
-            class="block px-4 py-2 text-gray-700 hover:bg-black hover:text-white rounded"
-            href="#">
-            Hogar
-          </a>
-          <a
-            class="block px-4 py-2 text-gray-700 hover:bg-black hover:text-white rounded"
-            href="#">
-            Deportes
-          </a>
-        </div>
-      </div>
-      <a
-        class="text-lg font-medium text-gray-700 transition-colors py-2 px-4 rounded hover:bg-black hover:text-white w-full text-left"
-        href="#">
-        Ayuda
-      </a>
-    </div>
-
-    <!-- Footer -->
-    <div class="absolute bottom-0 w-80 p-4 text-center">
-      <button class="py-2 px-4 bg-gray-900 text-white rounded-md hover:bg-gray-800 transition-all w-full">
-        Contacto
-      </button>
+  <!-- Menú desplegable -->
+  <div class="absolute right-0 mt-2 w-48 bg-white shadow-lg rounded-lg opacity-0 hover:opacity-100 transition-opacity duration-300 z-10 hidden group-hover:block">
+    <div class="flex flex-col items-start p-4 space-y-2">
+      <a href="/profile" class="text-gray-700 hover:text-white hover:bg-indigo-600 py-2 px-4 rounded-lg transition duration-200">Mi Perfil</a>
+      <a href="/orders" class="text-gray-700 hover:text-white hover:bg-indigo-600 py-2 px-4 rounded-lg transition duration-200">Mis Pedidos</a>
+      <a href="/settings" class="text-gray-700 hover:text-white hover:bg-indigo-600 py-2 px-4 rounded-lg transition duration-200">Configuración</a>
+      <a href="/logout" class="text-gray-700 hover:text-white hover:bg-red-600 py-2 px-4 rounded-lg transition duration-200">Cerrar Sesión</a>
     </div>
   </div>
 </div>
