@@ -4,6 +4,7 @@ import { CityService } from "../../services/city.service";
 import { HttpClient } from '@angular/common/http';
 import {CustomerService} from "../../services/customer.service";
 import {SpinnerComponent} from "../spinner/spinner.component";
+import {Route, Router} from "@angular/router";
 
 @Component({
   selector: 'app-customer',
@@ -31,7 +32,7 @@ export class CustomerComponent {
   cities: string[] = [];
   loading:boolean = false;
 
-  constructor(private cityService: CityService, private customerService: CustomerService) {
+  constructor(private cityService: CityService, private customerService: CustomerService,private router:Router) {
     this.cityService.getAllCities().subscribe(cities => {
       cities.forEach(city => {
         this.cities.push(city.name);
@@ -96,8 +97,11 @@ export class CustomerComponent {
       },
       complete:()=>{
         this.loading = false;
+        this.router.navigate(['/login'])
+
 
       }
+
     });
   }
 

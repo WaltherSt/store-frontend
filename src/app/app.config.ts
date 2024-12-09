@@ -8,12 +8,21 @@ import {provideHttpClient} from "@angular/common/http";
 import {provideStore} from '@ngrx/store';
 import {provideEffects} from '@ngrx/effects';
 import {provideStoreDevtools} from '@ngrx/store-devtools';
+import {shoppingCartReducer} from "./state/reducers/reducers";
 
 registerLocaleData(localeEsCo);
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), provideHttpClient(), provideStore(), provideEffects(), provideStoreDevtools({
+  providers: [provideRouter(routes), provideHttpClient(), provideStore(
+    {
+      car:shoppingCartReducer
+    }
+  ), provideEffects(), provideStoreDevtools({
     maxAge: 25,
     logOnly: !isDevMode()
-  }),{provide: LOCALE_ID, useValue: 'es-CO'}],
+  }),{provide: LOCALE_ID, useValue: 'es-CO'}
+
+
+  ],
+
 };
